@@ -31,7 +31,7 @@
                                     <th scope="col">{{ __('Name') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
                                     <th scope="col">{{ __('Mobile') }}</th>
-                                    <th scope="col">{{ __('Register by') }}</th>
+                                    <th scope="col">{{ __('Place') }}</th>
                                     <th scope="col">{{ __('Status') }}</th>
                                     <th scope="col">{{ __('Creation Date') }}</th>
                                     <!--<th scope="col">{{ __('Action') }}</th>-->
@@ -51,7 +51,7 @@
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
                                         <td>{{ $user->phone }}</td>
-                                        <td>{{ __('App') }}</td>
+                                        <td>{{ __('Indore') }}</td>
                                         <td><span class="btn badge badge-success badge-pill">Active</span></td>
                                         <td>{{ date('d M, Y', strtotime($user->created_at)) }}</td>
                                     </tr>

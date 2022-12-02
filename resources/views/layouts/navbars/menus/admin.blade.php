@@ -6,7 +6,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="javascript::void()">
+            <a class="nav-link" href="{{ route('user.index') }}">
                 <i class="ni ni-circle-08 text-blue"></i> {{ __('Users') }}
             </a>
         </li>

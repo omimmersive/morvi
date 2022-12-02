@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2022 at 03:15 PM
+-- Generation Time: Dec 02, 2022 at 11:32 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -76,22 +76,6 @@ CREATE TABLE `advertisements` (
   `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `advertisements`
---
-
-INSERT INTO `advertisements` (`id`, `coaching_id`, `title`, `position`, `image`, `created_by`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 'alkeoterbige', 'Footer', '1_book_cover.png', 0, 0, '2022-10-14 12:11:55', '2022-11-18 12:54:10'),
-(2, 0, 'Advertisement', 'Main Slider', '1665964441941Grade.jpeg,1665964682984logo.png,1667377082867frank-mckenna-OD9EOzfSOh0-unsplash.jpg,1667377082812natalya-zaritskaya-SIOdjcYotms-unsplash.jpg', 0, 1, '2022-10-16 21:02:59', '2022-11-22 17:41:33'),
-(3, 0, 'Ipsum', 'Popup', '1666334349838rowan-heuvel-U6t80TWJ1DM-unsplash_1666003133.jpg', 0, 0, '2022-10-17 05:28:39', '2022-11-21 18:07:27'),
-(4, 0, 'Banner Today', 'Main Slider', '1665999848816no-image.png,1665999848201avatar_1647511994.jpg', 0, 0, '2022-10-17 15:14:08', '2022-11-15 16:21:44'),
-(5, 0, 'MAin Slider', 'Main Slider', '1666012963487300798522_498686092260423_7403946250116045586_n.jpg,1666012963348300798522_498686092260423_7403946250116045586_n.jpg', 0, 0, '2022-10-17 18:52:43', '2022-11-17 12:30:07'),
-(6, 0, 'Main Slider', 'Main Slider', '1666012972254300798522_498686092260423_7403946250116045586_n.jpg', 0, 0, '2022-10-17 18:52:52', '2022-11-22 17:00:46'),
-(9, 0, 'Exam Categories', 'Main Slider', '1668668776850images_(11).jpg,1668756231869download_(18).jpg,1668756815211education-horizontal-typography-banner-set-with-learning-knowledge-symbols-flat-illustration_1284-29493.webp', 0, 0, '2022-11-17 12:36:16', '2022-11-22 17:42:36'),
-(8, 22, 'Carice whenua', 'Main Slider', '1668509375831img.jpg', 0, 0, '2022-11-15 16:19:35', '2022-11-18 12:54:24'),
-(10, 22, 'Exam Image', 'Main Slider', '1668759870901imgpsh_fullsize_anim_5_11zon.jpg,1668759870886imgpsh_fullsize_anim_(1)_4_11zon.jpg,1668759870649images_(13)_1_11zon.jpg,1668759870924images_(12)_2_11zon.jpg,1668759870101download_(19)_3_11zon.jpg', 0, 1, '2022-11-18 13:54:30', '2022-11-18 13:54:30'),
-(11, 26, 'Immersive Advertise', 'Main Slider', '1668765261680logo-blue-new.png,1668765261447sanskrit.jpg', 0, 1, '2022-11-18 15:24:21', '2022-11-21 18:20:17');
-
 -- --------------------------------------------------------
 
 --
@@ -110,47 +94,6 @@ CREATE TABLE `banners` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `books`
---
-
-CREATE TABLE `books` (
-  `id` int(11) NOT NULL,
-  `book_name` varchar(255) NOT NULL,
-  `book_type` varchar(50) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `exam_type_book` varchar(255) NOT NULL,
-  `publisher_id` int(11) DEFAULT NULL,
-  `heading` text NOT NULL,
-  `description` text NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `selling_price` varchar(255) NOT NULL,
-  `sample_book_upload` varchar(255) NOT NULL,
-  `main_book_upload` varchar(255) NOT NULL,
-  `sample_epub_book` varchar(255) NOT NULL,
-  `main_epub_book` varchar(255) NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `books`
---
-
-INSERT INTO `books` (`id`, `book_name`, `book_type`, `exam_id`, `exam_type_book`, `publisher_id`, `heading`, `description`, `image`, `selling_price`, `sample_book_upload`, `main_book_upload`, `sample_epub_book`, `main_epub_book`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Chemistry', 'Hindi', 1, 'Pre', 20, 'Lorem Ipsum is simply.', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '1_book_cover.png', '192', '1_sample_book.pdf', '1_main_book.pdf', '', '', 1, '2022-10-12 12:58:08', '2022-10-17 15:08:11'),
-(2, 'Maggie Vargas', 'English', 1, '', 1, 'jowabuahmivi', '<p>test</p>', '2_book_cover.jpeg', '556.19', '2_sample_book.pdf', '2_main_book.pdf', '', '', 1, '2022-10-14 19:44:14', '2022-10-31 15:45:30'),
-(3, 'Samuel Leonard', 'English', 1, 'Pre, Main', 1, 'vozbihpoweft', '<p>sdrgf</p>', '3_book_cover.png', '956.6', '3_sample_book.pdf', '3_main_book.pdf', '', '', 1, '2022-10-14 19:47:09', '2022-10-31 15:45:37'),
-(4, 'Lorem ipsum', 'English', 1, '', NULL, 'lorem ipsum', '<p>this is for test demo description</p>', '4_book_cover.png', '120', '4_sample_book.pdf', '4_main_book.pdf', '4_sample_epub_book.epub', '4_main_epub_book.epub', 1, '2022-10-28 18:26:20', '2022-11-10 19:07:08'),
-(5, 'Test Chandresh', 'English', 2, '', 18, 'Testing Chandresh', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '5_book_cover.jpg', '1000', '5_sample_book.pdf', '5_main_book.pdf', '5_sample_epub_book.epub', '5_main_epub_book.epub', 1, '2022-11-02 14:50:15', '2022-11-02 14:50:15'),
-(6, 'History', 'English', 1, 'Pre', 20, 'This is for testing purpose', '<p>This is for testing purpose</p>', '6_book_cover.png', '250', '6_sample_book.pdf', '6_main_book.pdf', '6_sample_epub_book.epub', '6_main_epub_book.epub', 1, '2022-11-10 18:58:34', '2022-11-10 18:58:35'),
-(7, 'Allie Neal', 'Hindi', 3, 'Main', 20, 'Programmer test', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '7_book_cover.png', '803.64', '7_sample_book.pdf', '7_main_book.pdf', '7_sample_epub_book.epub', '7_main_epub_book.epub', 1, '2022-11-13 22:52:55', '2022-11-21 18:24:58'),
-(8, 'Sanskrit UPSC', 'English', 13, '', 19, 'This is book for Sanskrit UPSC exam', '<p>This is book for Sanskrit UPSC exam</p>', '8_book_cover.jpg', '130', '8_sample_book.pdf', '8_main_book.pdf', '8_sample_epub_book.epub', '8_main_epub_book.epub', 1, '2022-11-18 15:02:55', '2022-11-18 15:02:56'),
-(9, 'Om book depo UPSC', 'English', 13, '', 25, 'This is for UPSC exam book', '<p>This is for UPSC exam book</p>', '9_book_cover.jpg', '2000', '9_sample_book.pdf', '9_main_book.pdf', '9_sample_epub_book.epub', '9_main_epub_book.epub', 1, '2022-11-18 15:11:35', '2022-11-18 15:11:36');
 
 -- --------------------------------------------------------
 
@@ -281,134 +224,6 @@ INSERT INTO `cities` (`id`, `created_at`, `updated_at`, `name`, `alias`, `image`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `coachings`
---
-
-CREATE TABLE `coachings` (
-  `id` int(11) NOT NULL,
-  `coaching_name` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `logo` varchar(255) NOT NULL,
-  `bank_holder_name` varchar(255) NOT NULL,
-  `bank_name` varchar(255) NOT NULL,
-  `bank_IFSC` varchar(255) NOT NULL,
-  `account_number` varchar(255) NOT NULL,
-  `login_id` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `coachings`
---
-
-INSERT INTO `coachings` (`id`, `coaching_name`, `contact_number`, `email`, `description`, `logo`, `bank_holder_name`, `bank_name`, `bank_IFSC`, `account_number`, `login_id`, `password`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Jeff Alexander', '8162787868', 'Jeff@mailinator.com', '<p>This is for test</p>', '1_coaching.png', '', '', '', '', 'Jeff1234', 'P@ss0rd', 1, '2022-10-10 19:52:48', '2022-10-11 12:52:32'),
-(2, 'Jeremiah Owen', '9766796594', 'jeremiah@mailinator.com', '<p>This is for testing purpose</p>', '2_coaching.png', '', '', '', '', 'Jeremiah123', 'admin@123', 1, '2022-10-11 14:32:48', '2022-10-11 14:32:48'),
-(3, 'Etta Vega', '7408716825', 'etta@mailinator.com', '<p>This is for testing purpose</p>', '3_coaching.png', '', '', '', '', 'etta@mailinator.com', '789456qwer', 1, '2022-10-14 11:00:37', '2022-10-14 11:00:37'),
-(4, 'Jane Benson', '4456901896', 'janee@mailinator.com', '<p>This is for testing purpose</p>', '4_coaching.png', 'Test bank', 'Test Bank', 'TEST7412', '5554564213213211', 'janee@mailinator.com', '798456QAZX', 1, '2022-10-14 11:01:58', '2022-10-18 17:46:51'),
-(5, 'Sai Ram', '78945621460', 'sairam@mailinator.com', '<p>Lorem Ipsu<strong>m</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '5_coaching.jpg', 'Lorem ipsum', 'Lorem Bank Test', 'LOREM74125', '7894561200000000', 'sairam@mailinator.com', '1236547890', 1, '2022-10-18 17:55:10', '2022-11-02 14:37:33'),
-(6, 'Testing Testing Testing Testing', '07582970904', 'chandreshj@gmail.com', '<p>Lorem Ipsum&nbsp;is simply dummied&nbsp;text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '6_coaching.png', 'Chandresh', 'SBI', 'AAADSFSDGD', '1234567890', 'chandreshj@gmail.com', '123456789', 1, '2022-11-02 14:39:06', '2022-11-02 14:40:11');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coaching_exams`
---
-
-CREATE TABLE `coaching_exams` (
-  `id` int(11) NOT NULL,
-  `coaching_id` int(11) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `coaching_exams`
---
-
-INSERT INTO `coaching_exams` (`id`, `coaching_id`, `exam_id`, `status`, `created_at`, `updated_at`) VALUES
-(1, 26, 1, 1, '2022-11-22 11:19:45', '2022-11-22 11:20:03'),
-(2, 26, 2, 1, '2022-11-22 11:19:45', '2022-11-22 11:20:03'),
-(5, 26, 5, 1, '2022-11-22 12:38:50', '2022-11-22 12:38:50'),
-(4, 26, 4, 1, '2022-11-22 11:20:12', '2022-11-22 11:20:24');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coaching_notes`
---
-
-CREATE TABLE `coaching_notes` (
-  `id` int(11) NOT NULL,
-  `coaching_id` int(11) NOT NULL,
-  `subject_id` int(11) NOT NULL DEFAULT 0,
-  `title_of_notes` varchar(255) NOT NULL,
-  `note_type` varchar(255) NOT NULL,
-  `heading` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `selling_price` varchar(255) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `exam_type` varchar(255) NOT NULL,
-  `sample_note` varchar(255) NOT NULL,
-  `main_note` varchar(255) NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `coaching_notes`
---
-
-INSERT INTO `coaching_notes` (`id`, `coaching_id`, `subject_id`, `title_of_notes`, `note_type`, `heading`, `description`, `selling_price`, `exam_id`, `exam_type`, `sample_note`, `main_note`, `image`, `status`, `created_at`, `updated_at`) VALUES
-(1, 22, 7, 'Spoken languages', 'English', 'The tech giant Google is currently developing an AI model.', 'The tech giant Google is currently developing an AI model.', '1200', 1, '', '1_sample_note.pdf', '1_main_note.pdf', '1_note_cover.png', 1, '2022-11-15 19:04:28', '2022-11-16 12:42:08'),
-(2, 22, 8, 'Information Technology', 'English', 'Ideas of computer science were first mentioned before the 1950s under the Massachusetts Institute of Technology (MIT) and Harvard University.', 'Ideas of computer science were first mentioned before the 1950s under the Massachusetts Institute of Technology (MIT) and Harvard University, where they had discussed and began thinking of computer circuits and numerical calculations.', '130', 1, 'Pre', '2_sample_note.pdf', '2_main_note.pdf', '2_note_cover.png', 1, '2022-11-16 15:28:44', '2022-11-16 16:31:25'),
-(3, 26, 10, 'Immersive Note-UPSC', 'English', 'This notes for UPSC', 'This notes for UPSC', '2200', 5, '', '3_sample_note.pdf', '3_main_note.pdf', '3_note_cover.jpeg', 1, '2022-11-18 15:29:42', '2022-11-22 19:03:47'),
-(4, 26, 10, 'UPSC Notes', 'English', 'This is for testing purpose UPSC exam', 'This is for testing purpose UPSC exam', '160', 4, '', '4_sample_note.pdf', '4_main_note.pdf', '4_note_cover.png', 1, '2022-11-22 14:21:50', '2022-11-22 19:03:38');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coaching_subjects`
---
-
-CREATE TABLE `coaching_subjects` (
-  `id` int(11) NOT NULL,
-  `coaching_id` int(11) NOT NULL,
-  `subject_name` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `icon` varchar(255) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `exam_type` varchar(255) NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `coaching_subjects`
---
-
-INSERT INTO `coaching_subjects` (`id`, `coaching_id`, `subject_name`, `description`, `icon`, `exam_id`, `exam_type`, `status`, `created_at`, `updated_at`) VALUES
-(5, 6, 'Math', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '5_subject.png', 2, '', 1, '2022-11-07 12:47:35', '2022-11-07 12:47:35'),
-(4, 4, 'English', 'This is for testing purpose', '4_subject.jpg', 1, 'Pre', 1, '2022-10-18 17:02:48', '2022-10-18 17:02:48'),
-(6, 22, 'Hindi', 'This is for test description', '6_subject.png', 1, 'Pre', 1, '2022-11-11 16:25:59', '2022-11-11 16:25:59'),
-(7, 22, 'Maths', 'This is for test demo description', '7_subject.png', 1, 'Pre', 1, '2022-11-16 12:36:24', '2022-11-16 12:36:24'),
-(8, 22, 'English', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', '8_subject.png', 1, 'Main', 1, '2022-11-16 13:59:45', '2022-11-16 13:59:45'),
-(9, 22, 'Sanskrit', 'Sanskrit is an ancient and classical language of India in which ever first book of the world Rigveda was compiled.', '9_subject.jpg', 3, 'Main', 1, '2022-11-17 19:15:20', '2022-11-17 19:15:20'),
-(10, 26, 'Maths', 'This for UPSC exam', '10_subject.jpeg', 13, 'Pre,Main', 1, '2022-11-18 15:28:20', '2022-11-18 15:28:20');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `configs`
 --
 
@@ -442,141 +257,6 @@ CREATE TABLE `coupons` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `current_affairs_question_answers`
---
-
-CREATE TABLE `current_affairs_question_answers` (
-  `id` int(11) NOT NULL,
-  `calender_date` varchar(255) NOT NULL,
-  `question` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `answer` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `option_1` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `option_2` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `option_3` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `option_4` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `question_language` varchar(50) NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `current_affairs_question_answers`
---
-
-INSERT INTO `current_affairs_question_answers` (`id`, `calender_date`, `question`, `answer`, `option_1`, `option_2`, `option_3`, `option_4`, `question_language`, `status`, `created_at`, `updated_at`) VALUES
-(3, '20221003', 'Lorem Ipsum छपाई और अक्षर योजन उद्योग का एक साधारण डमी पाठ है. Lorem Ipsum सन १५०० के बाद से अभी तक इस उद्योग का मानक डमी पाठ मन गया, जब एक अज्ञात मुद्रक ने नमूना लेकर एक नमूना किताब बनाई', '2', 'यह एक लंबा स्थापित तथ्य है कि जब एक पाठक एक पृष्ठ के खाखे को देखेगा तो पठनीय सामग्री से विचलित हो जाएगा.', 'यह एक लंबा स्थापित तथ्य है कि जब एक पाठक एक पृष्ठ के खाखे को देखेगा तो पठनीय सामग्री से विचलित हो जाएगा.', 'यह एक लंबा स्थापित तथ्य है कि जब एक पाठक एक पृष्ठ के खाखे को देखेगा तो पठनीय सामग्री से विचलित हो जाएगा.', 'यह एक लंबा स्थापित तथ्य है कि जब एक पाठक एक पृष्ठ के खाखे को देखेगा तो पठनीय सामग्री से विचलित हो जाएगा.', 'Hindi', 1, '2022-10-27 12:30:47', '2022-10-28 09:33:52'),
-(4, '20221003', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type', '4', '1 Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '2 Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '3 Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '4 Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'English', 1, '2022-10-27 12:37:48', '2022-10-27 20:06:52');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `daily_short_categories`
---
-
-CREATE TABLE `daily_short_categories` (
-  `id` int(11) NOT NULL,
-  `category_name` varchar(255) NOT NULL,
-  `category_icon` varchar(255) NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `daily_short_categories`
---
-
-INSERT INTO `daily_short_categories` (`id`, `category_name`, `category_icon`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Bess Spencer', '1_category.jpg', 1, '2022-10-19 14:45:12', '2022-10-19 14:51:50');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `exams`
---
-
-CREATE TABLE `exams` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `exam_type` varchar(191) NOT NULL,
-  `description` text NOT NULL,
-  `icon` varchar(255) NOT NULL,
-  `overview` text NOT NULL,
-  `syllabus` text NOT NULL,
-  `status` tinyint(4) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `exams`
---
-
-INSERT INTO `exams` (`id`, `name`, `exam_type`, `description`, `icon`, `overview`, `syllabus`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'IIT', 'Pre, Main', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>\r\n\r\n<p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>', '1_exams.png', '<p>Exam overview</p>', '<p>Exam syllabus</p>', 0, '2022-10-10 00:18:09', '2022-11-17 12:45:42'),
-(2, 'UPSC', '', '<p>dfsfsdfsdfdsfssf</p>', '2_exams.png', '', '', 0, '2022-10-12 15:46:09', '2022-11-17 12:45:35'),
-(3, 'PSC', 'Main', '<p>MPSC,&nbsp;BPSC,&nbsp;JPSC,&nbsp;GPSC</p>', '3_exams.png', '', '', 1, '2022-10-17 15:04:59', '2022-11-17 12:45:24'),
-(4, 'IIT New', '', '<p>JAM,&nbsp;CEED,&nbsp;HSEE</p>', '4_exams.jpg', '', '', 1, '2022-10-17 18:43:09', '2022-11-17 12:44:01'),
-(5, 'SSC', '', '<p>CGL,&nbsp;CHSL,&nbsp;JE,&nbsp;GD,&nbsp;CPO</p>', '5_exams.png', '', '', 1, '2022-10-18 14:24:46', '2022-11-17 12:43:10'),
-(6, 'Banking', 'Pre', '<p>SBI,&nbsp;IBPS,&nbsp;RBI,&nbsp;RBI&nbsp;&nbsp;</p>', '6_exams.jpg', '', '', 1, '2022-10-18 14:25:18', '2022-11-17 12:42:08'),
-(7, 'Shane Watts', 'Pre', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummied text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.&nbsp;</p>', '7_exams.png', '', '', 0, '2022-10-18 14:25:44', '2022-11-17 12:40:38'),
-(8, 'Beatrice Williamson', 'Pre', '<p>This is for testing</p>', '8_exams.png', '', '', 0, '2022-10-18 14:26:50', '2022-11-17 12:40:32'),
-(9, 'Harvey Clarke', 'Main', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummying text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.&nbsp;</p>', '9_exams.jpg', '', '', 0, '2022-10-18 14:27:52', '2022-11-17 12:40:25'),
-(10, 'Jacob Martin', 'Pre', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummied text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.&nbsp;</p>', '10_exams.jpg', '', '', 0, '2022-10-18 14:28:35', '2022-11-17 12:40:20'),
-(11, 'IT', 'Pre, Main', '<p>JNUEE,&nbsp;VITMEE,&nbsp;CUSAT CAT,&nbsp;JMIEE&nbsp;</p>', '11_exams.png', '', '', 1, '2022-10-18 14:28:55', '2022-11-17 12:40:12'),
-(12, 'Patwari', 'Pre, Main', '<p>General Knowledge, General Mathematics,&nbsp;General Aptitude, General Hindi, Rural Economy, and Panchayati Raj.</p>', '12_exams.png', '', '', 1, '2022-10-19 15:31:49', '2022-11-17 12:38:37'),
-(13, 'UPSC', 'Pre, Main', '<p>This is UPSC exam</p>', '13_exams.jpg', '<p>This is book for Sanskrit UPSC exam</p>', '', 1, '2022-11-18 14:55:12', '2022-11-18 15:27:09');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `exams_coaching`
---
-
-CREATE TABLE `exams_coaching` (
-  `id` int(11) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `coaching_id` int(11) NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `exams_coaching`
---
-
-INSERT INTO `exams_coaching` (`id`, `exam_id`, `coaching_id`, `status`, `created_at`, `updated_at`) VALUES
-(15, 13, 22, 1, '2022-11-18 16:50:41', '2022-11-18 16:50:41'),
-(16, 13, 26, 1, '2022-11-18 16:52:41', '2022-11-18 16:52:41');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `exams_dates`
---
-
-CREATE TABLE `exams_dates` (
-  `id` int(11) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `exam_title` varchar(255) NOT NULL,
-  `exam_date` varchar(255) NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `exams_dates`
---
-
-INSERT INTO `exams_dates` (`id`, `exam_id`, `exam_title`, `exam_date`, `status`, `created_at`, `updated_at`) VALUES
-(5, 13, 'Lorem', '2022-11-18', 1, '2022-11-18 19:20:06', '2022-11-18 19:20:06');
 
 -- --------------------------------------------------------
 
@@ -1082,40 +762,6 @@ INSERT INTO `hours` (`id`, `created_at`, `updated_at`, `0_from`, `0_to`, `1_from
 (14, NULL, NULL, '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', 14),
 (15, NULL, NULL, '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', 15),
 (16, NULL, NULL, '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', '05:00', '23:00', 16);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `in_shorts`
---
-
-CREATE TABLE `in_shorts` (
-  `id` int(11) NOT NULL,
-  `category_id` int(11) DEFAULT NULL,
-  `calender_date` varchar(255) NOT NULL,
-  `inShort_title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `short_language` varchar(191) NOT NULL,
-  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `image` varchar(191) NOT NULL,
-  `inShort_link` text NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `in_shorts`
---
-
-INSERT INTO `in_shorts` (`id`, `category_id`, `calender_date`, `inShort_title`, `short_language`, `description`, `image`, `inShort_link`, `status`, `created_at`, `updated_at`) VALUES
-(7, 1, '20221003', 'हम इसे क्यों प्रयोग करते हैं?', 'Hindi', '<p><strong>Lorem Ipsum</strong>&nbsp;छपाई और अक्षर योजन उद्योग का एक साधारण डमी पाठ है. Lorem Ipsum सन १५०० के बाद से अभी तक इस उद्योग का मानक डमी पाठ मन गया, जब एक अज्ञात मुद्रक ने नमूना लेकर एक नमूना किताब बनाई. यह न केवल पाँच सदियों से जीवित रहा बल्कि इसने इलेक्ट्रॉनिक मीडिया में छलांग लगाने के बाद भी मूलतः अपरिवर्तित रहा. यह 1960 के दशक में Letraset Lorem Ipsum अंश युक्त पत्र के रिलीज के साथ लोकप्रिय हुआ, और हाल ही में Aldus PageMaker Lorem Ipsum के संस्करणों सहित तरह डेस्कटॉप प्रकाशन सॉफ्टवेयर के साथ अधिक प्रचलित हुआ.</p>', '7_inShort.png', 'https://hi.lipsum.com/', 1, '2022-10-28 10:08:47', '2022-10-28 10:08:47'),
-(3, 1, '20221003', 'यह एक लंबा स्थापित तथ्य है कि जब एक पाठक एक पृष्ठ के खाखे', 'Hindi', '<p>यह एक लंबा स्थापित तथ्य है कि जब एक पाठक एक पृष्ठ के खाखे को देखेगा तो पठनीय सामग्री से विचलित हो जाएगा.</p>', '3_inShort.jpg', 'https://hi.lipsum.com/2222', 1, '2022-10-27 17:42:57', '2022-10-27 18:08:41'),
-(4, 1, '20221003', '03 news 1', 'English', '<p>TJHis is&nbsp; for testintg&nbsp;TJHis is&nbsp; for testintgTJHis is&nbsp; for testintgTJHis is&nbsp; for testintgV&nbsp;TJHis is&nbsp; for testintgTJHis is&nbsp; for testintgVTJHis is&nbsp; for testintg&nbsp;TJHis is&nbsp; for testintg</p>', '4_inShort.jpg', 'http://localhost:74/', 1, '2022-10-28 10:05:11', '2022-10-28 10:05:11'),
-(5, 1, '20221003', '03 News 2', 'English', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '5_inShort.png', 'localhost:74', 1, '2022-10-28 10:06:41', '2022-10-28 10:06:41'),
-(6, 1, '20221003', '03 News 1', 'English', '<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '6_inShort.png', 'https://www.lipsum.com/', 1, '2022-10-28 10:07:24', '2022-10-28 10:07:24'),
-(8, 1, '20221003', 'यह कहाँ से आता है?', 'Hindi', '<p><strong>Lorem Ipsum</strong>&nbsp;छपाई और अक्षर योजन उद्योग का एक साधारण डमी पाठ है. Lorem Ipsum सन १५०० के बाद से अभी तक इस उद्योग का मानक डमी पाठ मन गया, जब एक अज्ञात मुद्रक ने नमूना लेकर एक नमूना किताब बनाई. यह न केवल पाँच सदियों से जीवित रहा बल्कि इसने इलेक्ट्रॉनिक मीडिया में छलांग लगाने के बाद भी मूलतः अपरिवर्तित रहा. यह 1960 के दशक में Letraset Lorem Ipsum अंश युक्त पत्र के रिलीज के साथ लोकप्रिय हुआ, और हाल ही में Aldus PageMaker Lorem Ipsum के संस्करणों सहित तरह डेस्कटॉप प्रकाशन सॉफ्टवेयर के साथ अधिक प्रचलित हुआ.</p>', '8_inShort.png', 'https://hi.lipsum.com/', 1, '2022-10-28 10:09:30', '2022-10-28 10:09:30'),
-(9, 1, '20221003', 'मुझे कुछ भाग कहा मिल सकता है?', 'Hindi', '<p><strong>Lorem Ipsum</strong>&nbsp;छपाई और अक्षर योजन उद्योग का एक साधारण डमी पाठ है. Lorem Ipsum सन १५०० के बाद से अभी तक इस उद्योग का मानक डमी पाठ मन गया, जब एक अज्ञात मुद्रक ने नमूना लेकर एक नमूना किताब बनाई. यह न केवल पाँच सदियों से जीवित रहा बल्कि इसने इलेक्ट्रॉनिक मीडिया में छलांग लगाने के बाद भी मूलतः अपरिवर्तित रहा. यह 1960 के दशक में Letraset Lorem Ipsum अंश युक्त पत्र के रिलीज के साथ लोकप्रिय हुआ, और हाल ही में Aldus PageMaker Lorem Ipsum के संस्करणों सहित तरह डेस्कटॉप प्रकाशन सॉफ्टवेयर के साथ अधिक प्रचलित हुआ.</p>', '9_inShort.png', 'https://hi.lipsum.com/', 1, '2022-10-28 10:10:05', '2022-10-28 10:10:05'),
-(10, 1, '20221104', 'Vera Knight', 'English', '<p>I have a table that contains, amongst other columns, a column of browser versions. And I simply want to know from the record-set, how many of each type of browser there are. So, I need to end up with something like this: Total Records: 10; Internet Explorer 8: 2; Chrome 25: 4; Firefox 20: 4. (All adding up to 10)</p>', '10_inShort.png', 'https://peolealo.org', 1, '2022-11-11 12:23:48', '2022-11-11 12:23:48');
 
 -- --------------------------------------------------------
 
@@ -2231,6 +1877,15 @@ CREATE TABLE `pages` (
   `showAsLink` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `pages`
+--
+
+INSERT INTO `pages` (`id`, `created_at`, `updated_at`, `title`, `content`, `showAsLink`) VALUES
+(1, '2022-12-02 08:37:42', '2022-12-02 08:45:56', 'About Morvi', '<p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry&#39;s Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book.</p>', 0),
+(2, '2022-12-02 08:38:26', '2022-12-02 08:42:49', 'Terms and conditions', '<p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry&#39;s Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book.</p>', 0),
+(3, '2022-12-02 08:39:25', '2022-12-02 08:43:38', 'Data Policy', '<p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry&#39;s Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type And Scrambled It To Make A Type Specimen Book.</p>', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -2357,52 +2012,6 @@ CREATE TABLE `posts` (
   `link` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `link_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `publishers`
---
-
-CREATE TABLE `publishers` (
-  `id` int(11) NOT NULL,
-  `publisher_id_proof` varchar(191) NOT NULL,
-  `publisher_name` varchar(255) NOT NULL,
-  `publisher_contact` varchar(255) NOT NULL,
-  `publisher_address` text NOT NULL,
-  `publisher_email` varchar(255) NOT NULL,
-  `publisher_password` varchar(255) NOT NULL,
-  `bank_holder_name` varchar(255) NOT NULL,
-  `bank_name` varchar(255) NOT NULL,
-  `bank_IFSC` varchar(255) NOT NULL,
-  `account_number` text NOT NULL,
-  `status` tinyint(2) NOT NULL DEFAULT 1,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `publishers`
---
-
-INSERT INTO `publishers` (`id`, `publisher_id_proof`, `publisher_name`, `publisher_contact`, `publisher_address`, `publisher_email`, `publisher_password`, `bank_holder_name`, `bank_name`, `bank_IFSC`, `account_number`, `status`, `created_at`, `updated_at`) VALUES
-(1, '', 'Minerva Hayesd', '5146254896', '763 Sici Avenue', 'fot@example.com', 'p@ssw0rd', 'Lee Hanson', 'Alma Long', 'solceroravla', '4799706353887457', 1, '2022-10-13 18:49:53', '2022-10-14 12:26:19'),
-(2, '', 'Jessie Hall', '4647365876', '143 Ehoik Circle', 'lopedi@mailinator.com', 'p@ssw0rd', 'Roy Oliver', 'Bruce Hunt', 'sohehuminusv', '4886437073718434', 1, '2022-10-13 23:17:13', '2022-10-13 23:17:13'),
-(3, '', 'Ellen Walker', '3552868992', '354 Cilrej Loop', 'gikipi@mailinator.com', 'p@ssw0rd', 'Lucinda Dennis', 'Chris Horton', 'nusjifisfugi', '4928069549455224', 1, '2022-10-13 23:18:32', '2022-10-13 23:18:32'),
-(4, '', 'Jeanette Haynes', '9059643115', '1788 Zoco River', 'hepah@example.com', 'p@ssw0rd', 'Lelia Austin', 'Lois Vega', 'afiawzudzuaw', '4204594223713304', 1, '2022-10-13 23:20:58', '2022-10-13 23:20:58'),
-(5, '', 'Willie Mendez', '8706789151', '1681 Owaufo Circle', 'duku@mailinator.com', 'p@ssw0rd', 'Ernest Walsh', 'Samuel Fleming', 'sawmauruhodi', '4574760547896271', 1, '2022-10-13 23:23:16', '2022-10-13 23:23:16'),
-(6, '', 'Estelle Bailey', '5624175143', '270 Opeje Place', 'otgul@mailinator.com', 'p@ssw0rd', 'Ida Warren', 'Barbara Abbott', 'zohibbolfeav', '4908483252058394', 1, '2022-10-13 23:24:35', '2022-10-13 23:24:35'),
-(7, '', 'Lily Pratt', '4788249615', '1129 Epusak Park', 'jiltop@mailinator.com', 'p@ssw0rd', 'Lou Moss', 'May Powell', 'zuszatkisnes', '4372799588197169', 1, '2022-10-13 23:25:55', '2022-10-13 23:25:55'),
-(8, '', 'Tanmay Sasvadkar', '9876598765', 'Lorem ipsum', 'tanmay@immersiveinfotech.com', '1234512345', 'Lorem', 'Lorem', 'asdf76', '778967878678678', 1, '2022-10-13 23:28:12', '2022-10-13 23:28:12'),
-(15, '', 'Sylvia Arnold', '6665928262', '18 Powzuc Avenue', 'opgo@mailinator.com', 'p@ssw0rd', 'Bess Ortiz', 'Tom Rodriquez', 'funoekwizsic', '4653629652119569', 1, '2022-10-14 17:46:03', '2022-10-14 17:46:03'),
-(11, '', 'Steve Abbott', '9125371919', '1258 Pedum Square', 'curme@mailinator.com', 'p@ssw0rd', 'Isaac Griffin', 'Adrian Beck', 'barehjuropbo', '4469540913067634', 1, '2022-10-14 17:25:21', '2022-10-14 17:25:21'),
-(16, '', 'Margaret Marsh', '7176064792', '31 Hupo Boulevard', 'vanmasa@mailinator.com', 'p@ssw0rd', 'Tony Carr', 'Lillie Stanley', 'niwoulmucold', '4120282407559724', 1, '2022-10-14 17:47:45', '2022-10-14 17:47:45'),
-(14, '', 'Cecelia Sparks', '7507494427', '143 Utouli Boulevard', 'eptip@mailinator.com', 'p@ssw0rd', 'Myra Holt', 'Floyd Watkins', 'jebneribusul', '4708435924834687', 1, '2022-10-14 17:39:05', '2022-10-14 17:39:05'),
-(17, '', 'Atul Pawade', '8754992000', '1190 Zepub Manor', 'atul@mailinator.com', 'p@ssw0rd', 'Roger Griffin', 'Mittie Powers', 'miwiwuceroin', '4979031074606090', 1, '2022-10-14 17:50:38', '2022-10-14 17:50:38'),
-(18, '', 'Atul Pawade', '5693938528', '242 Valju Pike', 'atul@immersiveinfotech.com', 'p@ssw0rd', 'Alexander Harrison', 'Mario Saunders', 'doiklikmooce', '4863709958852935', 1, '2022-10-14 17:54:05', '2022-10-14 17:54:05'),
-(19, '', 'Eric Adams', '6313427677', '577 Arazo Drive', 'okocob@mailinator.com', 'p@ssw0rd', 'Harriett Lucas', 'Addie Watson', 'rabcoceddadu', '4611293995271420', 1, '2022-10-14 17:54:56', '2022-10-14 17:54:56'),
-(20, '', 'Sai Book', '9009789123', 'MG Road indoe', 'tanmaysasvadkar@gmail.com', 'tanmay7800', 'Sai Book', 'ICICI', 'ICICI00401', '7895455747885', 1, '2022-10-17 15:06:33', '2022-10-19 15:34:45'),
-(21, '21_publisher.png', 'Pushpendra Patel', '8287877543', 'Indore', 'pushpendra1363@gmail.com', '1234512345', 'Test', 'Test', '77777', '777777777', 0, '2022-10-17 18:33:29', '2022-10-18 18:09:00');
 
 -- --------------------------------------------------------
 
@@ -2624,7 +2233,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `created_at`, `updated_at`, `site_name`, `site_logo`, `search`, `restorant_details_image`, `restorant_details_cover_image`, `description`, `header_title`, `header_subtitle`, `currency`, `facebook`, `instagram`, `playstore`, `appstore`, `maps_api_key`, `delivery`, `typeform`, `mobile_info_title`, `mobile_info_subtitle`, `order_options`, `site_logo_dark`, `order_fields`, `admin_commission`) VALUES
-(1, '2022-10-08 01:55:41', '2022-12-01 13:06:01', 'Morvi', 'ad1d328f-a8a2-4b63-9011-6726ea640694', 'efb4f7f4-41b4-4d5e-8790-8e2c5f229eb3', '250e8831-4d63-43a1-96f1-6f7b515f4fc7', '/default/cover.jpg', 'Morvi', 'Morvi', 'Morvi', 'USD', '', '', '', '', 'AIzaSyCZhq0g1x1ttXPa1QB3ylcDQPTAzp_KUgA', 50.00, '', 'Morvi', '', '{}', '/default/logo.png', NULL, '30');
+(1, '2022-10-08 01:55:41', '2022-12-02 08:33:50', 'Morvi', 'ad1d328f-a8a2-4b63-9011-6726ea640694', 'efb4f7f4-41b4-4d5e-8790-8e2c5f229eb3', '250e8831-4d63-43a1-96f1-6f7b515f4fc7', '/default/cover.jpg', 'Morvi', 'Morvi', 'Morvi', 'USD', '', '', '', '', 'AIzaSyCZhq0g1x1ttXPa1QB3ylcDQPTAzp_KUgA', 0.00, '', 'Morvi', '', '{}', '/default/logo.png', NULL, '30');
 
 -- --------------------------------------------------------
 
@@ -2984,57 +2593,27 @@ CREATE TABLE `users` (
   `google_id` char(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `fb_id` char(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `apple_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Admin, 1=User, 2=Publisher, 3=Coaching',
+  `role` tinyint(4) NOT NULL DEFAULT 1 COMMENT '0=Admin, 1=User, 2=Photographer',
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `place` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
   `active` tinyint(1) NOT NULL DEFAULT 1,
-  `bc_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `google_id`, `fb_id`, `apple_id`, `role`, `name`, `email`, `password`, `phone`, `image`, `address`, `description`, `remember_token`, `created_at`, `updated_at`, `active`, `bc_id`) VALUES
-(1, 'NULL', 'NULL', 'NULL', 0, 'Admin', 'admin@morvi.com', '$2y$10$7YbrSnzF8j68BmE.6IJePuh96qrSf1DINUtaA1WLdR4lati5ZZ6..', '1234512345', '', '', '', 'eXyRx4qhyFCplBEnzGeYX4tdtIhQa64dceHU3949OraSW9b7KbZL9fAstU63', '2022-10-07 20:25:41', '2022-12-01 12:49:18', 1, 'NULL'),
-(2, 'QAZ221354DFGSDF98456', NULL, '', 1, 'Lorem', 'lorem1@mailinator.com', '$2y$10$2fmZz5Q.gIVaZd.DnR18DupxIj8wvAnKYTM9eiFokZ2jNNzQLGaS.', NULL, '', '', '', NULL, '2022-10-31 13:16:56', '2022-10-31 13:16:56', 1, ''),
-(3, NULL, NULL, 'QAZ221354DFGSDF98456', 1, 'Lorem', 'lorem2@mailinator.com', '$2y$10$7uKX8e.0kSw7gof1R/q7sudehlNq/TBSslkbcqD/7kTFgYs2ZU25u', NULL, '', '', '', NULL, '2022-10-31 13:17:58', '2022-10-31 13:17:58', 1, ''),
-(4, NULL, NULL, '', 1, 'Nikhil', 'nikhil.sahu@gmail.com', '$2y$10$.hmnrZNJDSgllQ82cUFhBe49RZ2iHtTsdJjLf4VRHLE5A0.kylWMK', '8349337625', '', '', '', NULL, '2022-11-06 08:15:10', '2022-11-06 08:15:10', 1, ''),
-(5, NULL, NULL, '', 1, 'Nikhil', 'nikhi.sahu@gmail.com', '$2y$10$Z/jiotIInEsaLYNrtnOcmeCKLIoVYVrNXodY5gHgMOsHSYb6JxJSu', '8349337627', '', '', '', NULL, '2022-11-06 08:17:51', '2022-11-06 08:17:51', 1, ''),
-(6, NULL, NULL, '', 1, 'Nikhil', 'nikhi.sah@gmail.com', '$2y$10$a5bzDuBT7BaVaSzy9ATYCewBufENPmBKYZMT5.PfCOUet7Zbd76fm', '8349337620', '', '', '', NULL, '2022-11-06 08:18:42', '2022-11-06 08:18:42', 1, ''),
-(7, NULL, NULL, '', 1, 'Nikhil', 'nikhi.sahss@gmail.com', '$2y$10$dSab5OmVYKFMwFUla3OVUeTa5DVr2GtBc71vuqDSlo9RGhNDlASEO', '8349337611', '', '', '', NULL, '2022-11-06 08:19:39', '2022-11-06 08:19:39', 1, ''),
-(8, NULL, NULL, '', 1, 'Nikhil', 'nikhi.sahs@gmail.com', '$2y$10$qAyMgYnF72vOjytywGFNHushmprvpPWubRMCVl0YCWch6UYBYM7Y2', '8349337610', '', '', '', NULL, '2022-11-06 08:20:04', '2022-11-06 08:20:04', 1, ''),
-(9, NULL, NULL, '', 1, 'Nikhi', 'nikh@gmail.com', '$2y$10$KjqRSYbHdZ6THzvqFqdIfu7OZlvdC7OH8wwbsqiFxI8vgUF0q6GmS', '1234567890', '', '', '', NULL, '2022-11-06 08:22:07', '2022-11-06 08:22:07', 1, ''),
-(10, NULL, NULL, '', 1, 'Nikhi', 'nik@gmail.com', '$2y$10$GcTOc05qnVmSCmZ.FQdan.0NZu05Dl5jlYp2j/VcjRKYsGF0zDgXq', '1234567891', '', '', '', NULL, '2022-11-06 08:23:43', '2022-11-06 08:23:43', 1, ''),
-(11, NULL, NULL, '', 1, 'Nikhi', 'ni@gmail.com', '$2y$10$/4jd3UWxmeisxYlXDGyokeO/eUoUTOUKSqn.3P12dLe.HYCM/Qf46', '2234567891', '', '', '', NULL, '2022-11-06 08:25:30', '2022-11-06 08:25:30', 1, ''),
-(12, NULL, NULL, '', 1, 'Nikhi', 'niaa@gmail.com', '$2y$10$Gapuqn8hmyeShwlmJIW10uva4KoYa5N2Ysgyitp2/ncNwOQylZkcC', '2234567893', '', '', '', NULL, '2022-11-06 08:26:04', '2022-11-06 08:26:04', 1, ''),
-(13, NULL, NULL, '', 1, 'Nikhi', 'nia2@gmail.com', '$2y$10$xbPPpcbQarE9Od7qpAXtlO2AT2euKqAnqkeyzOAaxFqsxmthxq..e', '2234567894', '', '', '', NULL, '2022-11-06 08:26:23', '2022-11-06 08:26:23', 1, ''),
-(14, NULL, NULL, '', 1, 'Nikhi', 'nia22@gmail.com', '$2y$10$VkiZyAe3iC9ixDqcImTU5OehBEC6ExmtXido7qhl.ySPNmuzzinQi', '2234567892', '', '', '', NULL, '2022-11-06 08:29:04', '2022-11-06 08:29:04', 1, ''),
-(15, NULL, NULL, '', 1, 'Nikhi', 'nia25@gmail.com', '$2y$10$ApZFVMp87t1y99QU929Hq./QWeNQakF/NpeW5T3kIdWPm1fIoAd/G', '2234567895', '', '', '', NULL, '2022-11-06 08:29:19', '2022-11-06 08:29:19', 1, ''),
-(16, NULL, NULL, '', 1, 'Nikhi', 'nia28@gmail.com', '$2y$10$qqhxr1nSZF9bTCEZYK.g../G147OY8qNv.3QVTmGCp9HdswNqVwEm', '2234567888', '', '', '', NULL, '2022-11-06 08:30:09', '2022-11-06 08:30:09', 1, ''),
-(17, NULL, NULL, '', 1, 'Lorem', 'lorem07@mailinator.com', '$2y$10$dhNEZ6tVEVXExvZLRJ/okukJCovYQwovPGU2Bf0cy6kedwTnhysQK', '7896541230', '', '', '', NULL, '2022-11-07 05:03:11', '2022-11-07 05:03:11', 1, ''),
-(18, NULL, NULL, 'ZAQWS123CDE', 1, 'Lorem', 'lorem1107@mailinator.com', '$2y$10$HA8Jdbu6n83.IHV6I/jO4OcjWzZFcswL5DOxFaqJcnlr9ryRevvsa', NULL, '', '', '', NULL, '2022-11-07 05:06:50', '2022-11-07 05:06:50', 1, ''),
-(19, NULL, NULL, '', 2, 'Publisher 1', 'publisher@mailinator.com', '$2y$10$uIqcDra7533mj8ld1OUCUOew3fbmiZTOmDcEhYpKW6z38cmaAjmLa', '7894561230', '', 'Lorem ipsum lorem ipsum', '', NULL, '2022-11-10 11:45:28', '2022-11-10 11:45:28', 1, ''),
-(20, NULL, NULL, '', 2, 'Publisher 2', 'publisher2@mailinator.com', '$2y$10$Vx7OOYJDmh4km0Nqv09p2eSeyGy87A4W6/jOfsqLwhYh4HhDHG4VS', '7894561230', '205401_publisher.png', 'Lorem ipsum', '', NULL, '2022-11-10 11:59:38', '2022-11-10 12:51:37', 1, ''),
-(21, NULL, NULL, '', 2, 'Publisher3', 'publisher3@mailinator.com', '$2y$10$xGHjmR9M7tQposDMXhSiNewMIQqbAGjXit9ogfJKPy7kn/aYGQq4i', '741025896', '219689_publisher.png', 'Lorem ipsum lorem ipsum', '', NULL, '2022-11-11 09:29:39', '2022-11-11 09:29:39', 1, ''),
-(22, NULL, NULL, '', 3, 'Coaching1', 'coaching11@mailinator.com', '$2y$10$PYIMhhDpDpS3mKT9./qIcODJ7Z09ERjb/UHDb/XRmXNAJkYDOuCtO', '74102589631', '22636_coaching.png', '', '<p>This is for test demo description&nbsp; 555</p>', NULL, '2022-11-11 10:06:25', '2022-11-18 09:42:56', 1, ''),
-(23, NULL, NULL, '', 1, 'himanshu', 'himanshu@gmail.com', '$2y$10$/ua5yKBJVU4t7aeQmmUg6.bf5hYnfPWBRXlVibY6nkwkd9WB4iYn2', '6386473010', '', '', '', NULL, '2022-11-14 16:41:42', '2022-11-14 16:41:42', 1, ''),
-(24, NULL, NULL, '', 1, 'vivek', 'vivek@gmail.com', '$2y$10$DTGJ6f5WE2HwHup6fnDq1eW0J3xg9.II55jzJ8vq8Z6H2I9Itggiq', '1234556788999', '', '', '', NULL, '2022-11-15 05:14:09', '2022-11-15 05:14:09', 1, ''),
-(25, NULL, NULL, '', 2, 'Om Book Depo', 'publisher5@mailinator.com', '$2y$10$gP4FmogGrCQn7Tv.fUyi1Oihzbl1UuMqQUhwEMr0Y27TcFyY.bT.S', '6665434444', '254903_publisher.png', 'This is book for Sanskrit UPSC exam', '', NULL, '2022-11-18 09:38:09', '2022-11-18 09:38:09', 1, ''),
-(26, NULL, NULL, '', 3, 'Immersiveinfotech', 'tanmay@immersiveinfotech.com', '$2y$10$1P5pqy9ZmzPvJXk7GevUCuGALBEoCp5vO7SbT80A1kESuDof9AAMW', '90999999999', '26816_coaching.png', '', '<p>This is for UPSC exam book</p>', NULL, '2022-11-18 09:46:58', '2022-11-18 09:46:58', 1, ''),
-(27, NULL, NULL, '', 1, 'umar', 'mansuriumar89@gmail.com', '$2y$10$FVRZ1WJ14huYsnkXisgf.uVFJxBUe5zbj0JS8IUw4Um7g6PHkrv/a', '8770555583', '', '', '', NULL, '2022-11-21 18:25:06', '2022-11-21 18:25:06', 1, ''),
-(28, NULL, NULL, '', 1, 'abc', 'a@gmail.com', '$2y$10$i4pe2njTuUPnwGw6MPt3U.f5WunBi94zK5nvqyW03e4ypakX8x4zq', '1234567899', '', '', '', NULL, '2022-11-21 19:30:30', '2022-11-22 19:40:38', 1, 'NjcwMjg2'),
-(29, NULL, NULL, '', 1, 'h@1', 'test01@gmail.com', '$2y$10$VVek3l6/GPX2kg6OVY1KU.ESQl0CPfZsjirFeOlcPuZcD04z.5CW.', '0000000000', '', '', '', NULL, '2022-11-22 06:54:10', '2022-11-22 06:54:10', 1, ''),
-(30, NULL, NULL, '', 1, '111', 'testing19@mailinator.com', '$2y$10$LN7bS9mXkNAvghwwsa2I5eNcOGe9S57QWq/k.ZK0ggoO4HtBHx2lu', '8236966379', '', '', '', NULL, '2022-11-22 07:00:58', '2022-11-22 07:00:58', 1, ''),
-(31, NULL, NULL, '', 1, 'Chandresh', 'test36@mailinator.com', '$2y$10$3jJYp39rV2ezErEcGw4Uo.7jxYU1guo9wy/mkLqn6XsU1ilRvCPdS', '7582970904', '', '', '', NULL, '2022-11-22 07:18:34', '2022-11-22 07:18:34', 1, '');
+INSERT INTO `users` (`id`, `google_id`, `fb_id`, `apple_id`, `role`, `name`, `email`, `password`, `phone`, `image`, `address`, `place`, `remember_token`, `active`, `created_at`, `updated_at`) VALUES
+(1, 'NULL', 'NULL', 'NULL', 0, 'Admin', 'admin@morvi.com', '$2y$10$7YbrSnzF8j68BmE.6IJePuh96qrSf1DINUtaA1WLdR4lati5ZZ6..', '1234512345', '', '', '', 'eXyRx4qhyFCplBEnzGeYX4tdtIhQa64dceHU3949OraSW9b7KbZL9fAstU63', 1, '2022-10-07 20:25:41', '2022-12-01 12:49:18'),
+(2, NULL, NULL, '', 1, 'Lorem', 'lorem@mailinator.com', '$2y$10$ws.Ya1aF/1S59LuznvZ6SO/4M86n2rLWLoceMhmjgqawI9wewHyqS', '8520147852', '', '', NULL, NULL, 1, '2022-12-02 09:42:42', '2022-12-02 09:42:42');
 
 -- --------------------------------------------------------
 
@@ -3053,17 +2632,6 @@ CREATE TABLE `users_banks` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users_banks`
---
-
-INSERT INTO `users_banks` (`id`, `user_id`, `bank_holder_name`, `bank_name`, `account_number`, `bank_IFSC`, `status`, `created_at`, `updated_at`) VALUES
-(1, 20, 'Lorem ipsum', 'Lorem ipsum', '123123', 'QAZ789465', 1, '2022-11-10 17:29:39', '2022-11-10 17:29:39'),
-(2, 21, 'LOREM', 'Lorem ipsum', '78945612', '7410258', 1, '2022-11-11 14:59:39', '2022-11-11 14:59:39'),
-(3, 22, 'Lorem', 'Lorem ipsum', '7896541230', '545456IUYT', 1, '2022-11-11 15:36:26', '2022-11-11 15:36:26'),
-(4, 25, 'Lorem', 'Lorem', '67888899888888', '7878SDFG898', 1, '2022-11-18 15:08:09', '2022-11-18 15:08:09'),
-(5, 26, 'Immersive', 'ICICI', '8789787897897', '676DFG7676', 1, '2022-11-18 15:16:58', '2022-11-18 15:16:58');
 
 -- --------------------------------------------------------
 
@@ -5043,12 +4611,6 @@ ALTER TABLE `banners`
   ADD KEY `banners_page_id_foreign` (`page_id`);
 
 --
--- Indexes for table `books`
---
-ALTER TABLE `books`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -5061,30 +4623,6 @@ ALTER TABLE `categories`
 ALTER TABLE `cities`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `cities_alias_unique` (`alias`);
-
---
--- Indexes for table `coachings`
---
-ALTER TABLE `coachings`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `coaching_exams`
---
-ALTER TABLE `coaching_exams`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `coaching_notes`
---
-ALTER TABLE `coaching_notes`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `coaching_subjects`
---
-ALTER TABLE `coaching_subjects`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `configs`
@@ -5101,36 +4639,6 @@ ALTER TABLE `coupons`
   ADD KEY `coupons_restaurant_id_foreign` (`restaurant_id`);
 
 --
--- Indexes for table `current_affairs_question_answers`
---
-ALTER TABLE `current_affairs_question_answers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `daily_short_categories`
---
-ALTER TABLE `daily_short_categories`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `exams`
---
-ALTER TABLE `exams`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `exams_coaching`
---
-ALTER TABLE `exams_coaching`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `exams_dates`
---
-ALTER TABLE `exams_dates`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `extras`
 --
 ALTER TABLE `extras`
@@ -5143,12 +4651,6 @@ ALTER TABLE `extras`
 ALTER TABLE `hours`
   ADD PRIMARY KEY (`id`),
   ADD KEY `hours_restorant_id_foreign` (`restorant_id`);
-
---
--- Indexes for table `in_shorts`
---
-ALTER TABLE `in_shorts`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `items`
@@ -5272,12 +4774,6 @@ ALTER TABLE `plan`
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `publishers`
---
-ALTER TABLE `publishers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -5420,19 +4916,13 @@ ALTER TABLE `address`
 -- AUTO_INCREMENT for table `advertisements`
 --
 ALTER TABLE `advertisements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `books`
---
-ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -5447,30 +4937,6 @@ ALTER TABLE `cities`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `coachings`
---
-ALTER TABLE `coachings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `coaching_exams`
---
-ALTER TABLE `coaching_exams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `coaching_notes`
---
-ALTER TABLE `coaching_notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `coaching_subjects`
---
-ALTER TABLE `coaching_subjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
 -- AUTO_INCREMENT for table `configs`
 --
 ALTER TABLE `configs`
@@ -5483,36 +4949,6 @@ ALTER TABLE `coupons`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `current_affairs_question_answers`
---
-ALTER TABLE `current_affairs_question_answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `daily_short_categories`
---
-ALTER TABLE `daily_short_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `exams`
---
-ALTER TABLE `exams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `exams_coaching`
---
-ALTER TABLE `exams_coaching`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `exams_dates`
---
-ALTER TABLE `exams_dates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
 -- AUTO_INCREMENT for table `extras`
 --
 ALTER TABLE `extras`
@@ -5523,12 +4959,6 @@ ALTER TABLE `extras`
 --
 ALTER TABLE `hours`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `in_shorts`
---
-ALTER TABLE `in_shorts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `items`
@@ -5582,7 +5012,7 @@ ALTER TABLE `order_has_status`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `paths`
@@ -5613,12 +5043,6 @@ ALTER TABLE `plan`
 --
 ALTER TABLE `posts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `publishers`
---
-ALTER TABLE `publishers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `ratings`
@@ -5690,13 +5114,13 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users_banks`
 --
 ALTER TABLE `users_banks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `variants`

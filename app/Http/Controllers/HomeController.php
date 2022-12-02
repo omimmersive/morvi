@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Exam;
-use App\Coaching;
-use App\Book;
 use App\Items;
 use App\Order;
-use App\CoachingNote;
 use App\Restorant;
 use App\User;
 use Carbon\Carbon;
@@ -55,11 +51,11 @@ class HomeController extends Controller
             11 => __('Dec'),
         ];
 
-        $totalExam = Exam::count();
-        $totalCoaching = Coaching::count();
-        $totalBook = Book::count();
+        $totalExam = 0;
+        $totalCoaching = 0;
+        $totalBook = 0;
         $totalUsers = User::where('role', 1)->count();
-        $booksListDashboard = Book::select('id', 'image', 'book_name', 'exam_id', 'selling_price')->orderBy('id', 'desc')->take(5)->get();
+        $booksListDashboard = [];
         $userListDashboard = User::select('id', 'name', 'email', 'phone')->where('role', 1)->orderBy('id', 'desc')->take(5)->get();
         if(auth()->user()->role == 0){
             if (auth()->user()->hasRole('admin')) {
@@ -327,8 +323,8 @@ class HomeController extends Controller
             //dd(Carbon::now()->format('M'));
             $views = Restorant::sum('views');
            
-            $totalBooks = Book::where('publisher_id', auth()->user()->id)->count();
-            $totalBooksList = Book::where('publisher_id', auth()->user()->id)->orderBy('id', 'desc')->limit(5)->get();
+            $totalBooks = 0;
+            $totalBooksList = [];
             return view('dashboard-publisher', [
                 'totalBooks' => $totalBooks,
                 'totalBooksList' => $totalBooksList,
@@ -400,8 +396,8 @@ class HomeController extends Controller
 
             //dd(Carbon::now()->format('M'));
             $views = Restorant::sum('views');
-            $totalNotes = CoachingNote::where('coaching_id', auth()->user()->id)->count();
-            $totalNotesList = CoachingNote::where('coaching_id', auth()->user()->id)->orderBy('id', 'desc')->limit(5)->get();
+            $totalNotes = 0;
+            $totalNotesList = [];
             return view('dashboard-coaching', [
                 'totalNotes' => $totalNotes,
                 'totalNotesList' => $totalNotesList,

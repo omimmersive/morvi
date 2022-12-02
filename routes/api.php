@@ -17,6 +17,12 @@ Route::post('forgotpassword','ApiController@forgotpassword');
 
 Route::post('slider','ApiController@slider');
 
+Route::post('about_us','ApiController@about_us');
+
+Route::post('term_condition','ApiController@term_condition');
+  
+Route::post('policy','ApiController@policy');
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -157,7 +163,7 @@ Route::prefix('v2/client')->group(function () {
      */
     //Settings /api/v2/client/settings
     Route::prefix('settings')->name('settings.')->group(function () {
-        Route::get('/', 'API\Client\SettingsController@index')->name('indexapiclient');
+    Route::get('/', 'API\Client\SettingsController@index')->name('indexapiclient');
     });
    
 
